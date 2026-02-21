@@ -111,16 +111,15 @@
 <script>
 function viewReport() {
   const id = document.getElementById("reportID").value.trim();
-  const name = document.getElementById("patientName").value.trim().replace(/\s+/g, "");
-  
-  if(id && name){
-    const filePath = `reports/${id}-${name}.pdf`;
-    window.open(filePath, "_blank"); // Opens the PDF
+
+  if (id) {
+    const filePath = `reports/${id}.pdf`;
+    window.open(filePath, "_blank");
   } else {
-    alert("Please enter both Report ID and Patient Name");
+    alert("Please enter Report ID");
   }
 }
-</script> id="homecollection">
+</script>id="homecollection">
   <div class="card">
     <h2>Book Home Blood Collection</h2>
     <label>Patient Name</label>
@@ -148,6 +147,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
