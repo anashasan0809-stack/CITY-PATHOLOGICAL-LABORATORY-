@@ -111,13 +111,21 @@
 <script>
 function viewReport() {
   const id = document.getElementById("reportID").value.trim();
-
-  if (id) {
-    const filePath = `reports/${id}.pdf`;
-    window.open(filePath, "_blank");
-  } else {
+  if (!id) {
     alert("Please enter Report ID");
+    return;
   }
+
+  const formats = ["pdf", "jpg", "png"];
+  let opened = false;
+
+  formats.forEach(ext => {
+    if (!opened) {
+      const filePath = `reports/${id}.${ext}`;
+      const win = window.open(filePath, "_blank");
+      if (win) opened = true;
+    }
+  });
 }
 </script>id="homecollection">
   <div class="card">
@@ -147,6 +155,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
