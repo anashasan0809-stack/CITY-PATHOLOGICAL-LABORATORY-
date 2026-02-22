@@ -122,20 +122,29 @@ function viewReport() {
   }
 
   const basePath = `reports/${id}-${name}`;
-  const formats = ["pdf", "jpg", "png"];
-  let opened = false;
+  const name = document.getElementById("patientName").value
+  .trim()
+  .replace(/\s+/g, "");
 
-  formats.forEach(ext => {
-    if (opened) return;
-    const url = `${basePath}.${ext}`;
-    fetch(url, { method: "HEAD" })
-      .then(res => {
-        if (res.ok && !opened) {
-          opened = true;
-          window.open(url, "_blank");
-        }
-      });
-  });
+if (!name) {
+  alert("Please enter Patient Name");
+  return;
+}
+
+const formats = ["pdf", "jpg", "png"];
+let opened = false;
+
+formats.forEach(ext => {
+  if (!opened) {
+    const filePath = `reports/${id}-${name}.${ext}`;
+    const win = window.open(filePath, "_blank");
+    if (win) opened = true;
+  }
+});
+
+if (!opened) {
+  alert("Report not found. Please check ID and name.");
+}
 
   setTimeout(() => {
     if (!opened) {
@@ -171,6 +180,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
