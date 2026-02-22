@@ -111,46 +111,38 @@
 <script>
 function viewReport() {
   const id = document.getElementById("reportID").value.trim();
-  const name = document.getElementById("patientName").value
-    .trim()
-    .replace(/\s+/g, "")
-    .toUpperCase();
+  const rawName = document.getElementById("patientName").value.trim();
+  const name = rawName.replace(/\s+/g, "");
 
-  if (!id || !name) {
-    alert("Please enter both Report ID and Patient Name");
+  if (!id) {
+    alert("Please enter Report ID");
     return;
   }
 
-  const basePath = `reports/${id}-${name}`;
-  const name = document.getElementById("patientName").value
-  .trim()
-  .replace(/\s+/g, "");
+  const paths = [];
 
-if (!name) {
-  alert("Please enter Patient Name");
-  return;
-}
-
-const formats = ["pdf", "jpg", "png"];
-let opened = false;
-
-formats.forEach(ext => {
-  if (!opened) {
-    const filePath = `reports/${id}-${name}.${ext}`;
-    const win = window.open(filePath, "_blank");
-    if (win) opened = true;
+  if (name) {
+    paths.push(`reports/${id}-${name}.pdf`);
+    paths.push(`reports/${id}-${name}.jpg`);
+    paths.push(`reports/${id}-${name}.png`);
   }
-});
 
-if (!opened) {
-  alert("Report not found. Please check ID and name.");
-}
+  paths.push(`reports/${id}.pdf`);
+  paths.push(`reports/${id}.jpg`);
+  paths.push(`reports/${id}.png`);
 
-  setTimeout(() => {
+  let opened = false;
+
+  paths.forEach(path => {
     if (!opened) {
-      alert("Report not found. Please check ID and name.");
+      const win = window.open(path, "_blank");
+      if (win) opened = true;
     }
-  }, 800);
+  });
+
+  if (!opened) {
+    alert("Report not found. Please check ID or contact the lab.");
+  }
 }
 </script>id="homecollection">
   <div class="card">
@@ -180,6 +172,7 @@ if (!opened) {
 </footer></body>
 
 </html>
+
 
 
 
