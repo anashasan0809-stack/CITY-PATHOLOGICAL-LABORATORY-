@@ -117,20 +117,7 @@ function viewReport() {
     return;
   }
 
-  const formats = ["pdf", "jpg", "png"];
-  let opened = false;
-
-  formats.forEach(ext => {
-    if (!opened) {
-      const path = `reports/${id}.${ext}`;
-      const win = window.open(path, "_blank");
-      if (win) opened = true;
-    }
-  });
-
-  if (!opened) {
-    alert("Report not found. Please contact the lab.");
-  }
+  window.location.href = "CITY-PATHOLOGICAL-LABORATORY-/reports/" + id + ".jpg";
 }
 </script>
 
@@ -162,6 +149,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
