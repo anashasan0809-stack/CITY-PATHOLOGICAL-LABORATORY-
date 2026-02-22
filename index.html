@@ -111,37 +111,25 @@
 <script>
 function viewReport() {
   const id = document.getElementById("reportID").value.trim();
-  const rawName = document.getElementById("patientName").value.trim();
-  const name = rawName.replace(/\s+/g, "");
 
   if (!id) {
     alert("Please enter Report ID");
     return;
   }
 
-  const paths = [];
-
-  if (name) {
-    paths.push(`reports/${id}-${name}.pdf`);
-    paths.push(`reports/${id}-${name}.jpg`);
-    paths.push(`reports/${id}-${name}.png`);
-  }
-
-  paths.push(`reports/${id}.pdf`);
-  paths.push(`reports/${id}.jpg`);
-  paths.push(`reports/${id}.png`);
-
+  const formats = ["pdf", "jpg", "png"];
   let opened = false;
 
-  paths.forEach(path => {
+  formats.forEach(ext => {
     if (!opened) {
+      const path = `reports/${id}.${ext}`;
       const win = window.open(path, "_blank");
       if (win) opened = true;
     }
   });
 
   if (!opened) {
-    alert("Report not found. Please check ID or contact the lab.");
+    alert("Report not found. Please contact the lab.");
   }
 }
 </script>
@@ -174,6 +162,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
