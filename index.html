@@ -111,21 +111,37 @@
 <script>
 function viewReport() {
   const id = document.getElementById("reportID").value.trim();
-  if (!id) {
-    alert("Please enter Report ID");
+  const name = document.getElementById("patientName").value
+    .trim()
+    .replace(/\s+/g, "")
+    .toUpperCase();
+
+  if (!id || !name) {
+    alert("Please enter both Report ID and Patient Name");
     return;
   }
 
+  const basePath = `reports/${id}-${name}`;
   const formats = ["pdf", "jpg", "png"];
   let opened = false;
 
   formats.forEach(ext => {
-    if (!opened) {
-      const filePath = `reports/${id}.${ext}`;
-      const win = window.open(filePath, "_blank");
-      if (win) opened = true;
-    }
+    if (opened) return;
+    const url = `${basePath}.${ext}`;
+    fetch(url, { method: "HEAD" })
+      .then(res => {
+        if (res.ok && !opened) {
+          opened = true;
+          window.open(url, "_blank");
+        }
+      });
   });
+
+  setTimeout(() => {
+    if (!opened) {
+      alert("Report not found. Please check ID and name.");
+    }
+  }, 800);
 }
 </script>id="homecollection">
   <div class="card">
@@ -155,6 +171,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
