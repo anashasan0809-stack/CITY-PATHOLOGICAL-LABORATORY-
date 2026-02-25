@@ -118,9 +118,23 @@ function viewReport() {
     return;
   }
 
-  window.location.href = "reports/" + id + ".jpg";
+  // Try PDF first
+  const pdfPath = "reports/" + id + ".pdf";
+  const imgPath = "reports/" + id + ".jpg";
+
+  fetch(pdfPath, { method: "HEAD" })
+    .then(res => {
+      if (res.ok) {
+        window.open(pdfPath, "_blank");
+      } else {
+        window.open(imgPath, "_blank");
+      }
+    })
+    .catch(() => {
+      alert("Report not found");
+    });
 }
-</script>
+      </script>
 
 <section id="homecollection">
   <div class="card">
@@ -150,6 +164,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
