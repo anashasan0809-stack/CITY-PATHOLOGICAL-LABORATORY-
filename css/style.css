@@ -111,16 +111,16 @@ body{
 
   display:grid;
   grid-template-columns: 1.1fr 1fr;
-  min-height:380px;
+  min-height:460px;
 }
 
 .hero-left{
-  padding:50px 40px;
+  padding:70px 60px;
 }
 
 .hero-title{
   margin:0;
-  font-size:44px;
+  font-size:52px;
   line-height:1.05;
   font-weight:800;
 }
@@ -163,7 +163,9 @@ body{
 
 /* RIGHT SIDE IMAGE AS BACKGROUND */
 .hero-right{
-  background: url("../images/hero.png") center/cover no-repeat;
+  background:
+    linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 20%, rgba(255,255,255,0) 40%),
+    url("../images/hero.png") center/cover no-repeat;
 }
 
 /* FEATURES */
