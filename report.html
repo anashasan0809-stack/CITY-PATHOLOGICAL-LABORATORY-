@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Report - City Pathological Laboratory</title>
+  <base href="https://anashasan0809-stack.github.io/CITY-PATHOLOGICAL-LABORATORY-/" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>CITY PATHOLOGICAL LABORATORY</h1>
+  <p>A Unit of Global Janch Ghar</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="report.html">View Report</a>
+  <a href="home-collection.html">Home Collection</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+  <div class="card">
+    <h2>View Patient Report</h2>
+
+    <label>Report ID</label>
+    <input type="text" id="reportID" placeholder="Enter Report ID" />
+
+    <label>Patient Name</label>
+    <input type="text" id="patientName" placeholder="Enter Patient Name" />
+
+    <button onclick="viewReport()">View Report</button>
+    <button onclick="downloadReport()">Download Report</button>
+
+    <p style="font-size:12px; margin-top:10px;">Note: Reports may open as PDF or image.</p>
+  </div>
+</section>
+
+<footer>
+  © City Pathological Laboratory, Giridih
+</footer>
+
+<script>
+function viewReport() {
+  const id = document.getElementById("reportID").value.trim();
+  if (!id) { alert("Please enter Report ID"); return; }
+
+  // open PDF first (most common)
+  window.open("reports/" + id + ".pdf", "_blank");
+}
+
+function downloadReport() {
+  const id = document.getElementById("reportID").value.trim();
+  if (!id) { alert("Please enter Report ID"); return; }
+
+  const link = document.createElement("a");
+  link.href = "reports/" + id + ".pdf";
+  link.download = id + ".pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+</script>
+
+</body>
+</html>
