@@ -177,7 +177,7 @@ body{
 /* right side hero image (your design image) */
 .hero-right{
   margin-left: -1px; /* removes the thin middle line */
-}
+
   background:
     linear-gradient(to right,
       rgba(255,255,255,0.96) 0%,
