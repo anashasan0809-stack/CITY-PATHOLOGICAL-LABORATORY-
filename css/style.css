@@ -113,7 +113,16 @@ body{
 
 /* left side */
 .hero-left{
-  padding: 62px 56px;
+  .hero-left{
+  padding:70px 60px;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(219, 234, 254, 0.45) 0%,   /* soft blue */
+      rgba(219, 234, 254, 0.25) 35%,
+      rgba(255,255,255,0.95) 70%
+    );
 }
 
 .hero-title{
