@@ -99,7 +99,7 @@ body{
 
 /* HERO SECTION */
 .hero{
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .hero-card{
@@ -111,7 +111,8 @@ body{
 
   display:grid;
   grid-template-columns: 1.1fr 1fr;
-  min-height:460px;
+  min-height:520px;
+  transition: all 0.3s ease;
 }
 
 .hero-left{
@@ -164,9 +165,10 @@ body{
 /* RIGHT SIDE IMAGE AS BACKGROUND */
 .hero-right{
   background:
-    linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 20%, rgba(255,255,255,0) 40%),
+    linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 30%, rgba(255,255,255,0) 55%),
     url("../images/hero.png") center/cover no-repeat;
 }
+
 
 /* FEATURES */
 .features{
