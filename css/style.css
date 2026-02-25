@@ -100,7 +100,7 @@ body{
 }
 
 .hero-card{
-  background: var(--card);
+  background: #ffffff;   /* ensure solid white */
   border-radius: 26px;
   box-shadow: var(--shadow);
   border: 1px solid rgba(0,0,0,0.04);
@@ -109,6 +109,8 @@ body{
   display:grid;
   grid-template-columns: 1.1fr 1fr;
   min-height: 420px;
+
+  gap: 0;   /* important – remove grid gap */
 }
 
 /* left side */
@@ -176,8 +178,8 @@ body{
 
 /* right side hero image (your design image) */
 .hero-right{
-  margin-left: -1px; /* removes the thin middle line */
-
+  position: relative;
+  margin-left: -2px;     /* overlap to hide seam */
   background:
     linear-gradient(to right,
       rgba(255,255,255,0.96) 0%,
@@ -186,6 +188,7 @@ body{
     ),
     url("../images/hero.png") center/cover no-repeat;
 }
+.hero-left{ position: relative; z-index: 1; }
 
 /* FEATURES */
 .features{
