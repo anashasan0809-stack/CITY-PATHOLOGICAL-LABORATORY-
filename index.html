@@ -1,114 +1,32 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City Pathological Laboratory</title>
   <base href="https://anashasan0809-stack.github.io/CITY-PATHOLOGICAL-LABORATORY-/" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #222;
-    }
-    header {
-      background: #28a745;
-      color: #fff;
-      padding: 16px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-    header p {
-      margin: 6px 0 0;
-      font-size: 13px;
-    }
-    nav {
-      display: flex;
-      justify-content: space-around;
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
-    }
-    nav a {
-      padding: 12px 8px;
-      text-decoration: none;
-      color: #28a745;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    section {
-      padding: 16px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .card h2 {
-      margin-top: 0;
-      font-size: 18px;
-      color: #28a745;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      font-size: 14px;
-    }
-    input {
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background: #28a745;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      margin-top: 14px;
-    }
-    footer {
-      background: #28a745;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      font-size: 13px;
-    }
-    button {
-  cursor: pointer;
-}
-
-ul {
-  padding-left: 18px;
-  font-size: 14px;
-}
-
-li {
-  margin-bottom: 6px;
-}
-  </style>
+  <link rel="stylesheet" href="css/style.css"> <!-- keep CSS external if possible -->
 </head>
-<body><header>
+<body>
+
+<header>
   <h1>CITY PATHOLOGICAL LABORATORY</h1>
   <p>A Unit of Global Janch Ghar</p>
-</header><nav>
-   <a href="#home">Home</a>
-  <a href="#report">View Report</a>
-  <a href="#homecollection">Home Collection</a>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="report.html">View Report</a>
+  <a href="home-collection.html">Home Collection</a>
   <a href="#contact">Contact</a>
-</nav><section id="home">
+</nav>
+
+<section id="home">
   <div class="card">
     <h2>Reliable Diagnostic Services</h2>
     <p>Accurate • Timely • Trusted by Patients</p>
-    <button onclick="location.href='#report'">View Report</button>
+    <a href="report.html"><button>View Report</button></a>
+    <a href="home-collection.html"><button>Home Collection</button></a>
   </div>
 
   <div class="card">
@@ -121,96 +39,23 @@ li {
     </ul>
   </div>
 </section>
-<id="report">
-  <div class="card">
-    <h2>View Patient Report</h2>
-    <label>Report ID</label>
-    <input type="text" id="reportID" placeholder="Enter Report ID" />
-    <label>Patient Name</label>
-    <input type="text" id="patientName" placeholder="Enter Patient Name" />
-    <button onclick="viewReport()">View Report</button>
-    <button onclick="downloadReport()">Download Report</button>
-    <p style="font-size:12px; margin-top:10px;">Note: Reports will open as PDF or image.</p>
-  </div>
-</section>
 
-<script>
-function viewReport() {
-  const id = document.getElementById("reportID").value.trim();
-
-  if (!id) {
-    alert("Please enter Report ID");
-    return;
-  }
-
-  // Try PDF first
-  const pdfPath = "reports/" + id + ".pdf";
-  const imgPath = "reports/" + id + ".jpg";
-
-  fetch(pdfPath, { method: "HEAD" })
-    .then(res => {
-      if (res.ok) {
-        window.open(pdfPath, "_blank");
-      } else {
-        window.open(imgPath, "_blank");
-      }
-    })
-    .catch(() => {
-      alert("Report not found");
-    });
-}
-  function downloadReport() {
-  const id = document.getElementById("reportID").value.trim();
-
-  if (!id) {
-    alert("Please enter Report ID");
-    return;
-  }
-
-  const pdfPath = "reports/" + id + ".pdf";
-  const imgPath = "reports/" + id + ".jpg";
-
-  fetch(pdfPath, { method: "HEAD" })
-    .then(res => {
-      const link = document.createElement("a");
-      link.href = res.ok ? pdfPath : imgPath;
-      link.download = id;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    })
-    .catch(() => alert("Report not found"));
-  }
-      </script>
-
-<section id="homecollection">
-  <div class="card">
-    <h2>Book Home Blood Collection</h2>
-    <label>Patient Name</label>
-    <input type="text" placeholder="Enter Full Name" /><label>Mobile Number</label>
-<input type="tel" placeholder="Enter Mobile Number" />
-
-<label>Address</label>
-<input type="text" placeholder="Enter Complete Address" />
-
-<label>Test Required</label>
-<input type="text" placeholder="e.g. CBC, LFT, Thyroid" />
-
-<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfrJg3ePFV8pqBk4DvJH8d2mIs04N9HQkGM1aiOD2JGc-ebGA/viewform?usp=publish-editor')">Submit Request</button>
-
-  </div>
-</section><section id="contact">
+<section id="contact">
   <div class="card">
     <h2>Contact Us</h2>
     <p><strong>Main Branch:</strong><br>
     RS Complex, Shiv Mohalla, Giridih</p>
     <p><strong>Phone:</strong> +91-8603446841</p>
   </div>
-</section><footer>
-  © City Pathological Laboratory, Giridih
-</footer></body>
+</section>
 
+<footer>
+  © City Pathological Laboratory, Giridih
+</footer>
+
+</body>
 </html>
+
 
 
 
