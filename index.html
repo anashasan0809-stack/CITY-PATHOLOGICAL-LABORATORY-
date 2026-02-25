@@ -5,90 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City Pathological Laboratory</title>
 
-  <!-- IMPORTANT for GitHub Pages project site -->
-  
+  <!-- IMPORTANT: for GitHub Pages project site -->
+  <base href="/CITY-PATHOLOGICAL-LABORATORY-/" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=1">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-<header>
-  <h1>CITY PATHOLOGICAL LABORATORY</h1>
-  <p>A Unit of Global Janch Ghar</p>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="report.html">View Report</a>
-  <a href="home-collection.html">Home Collection</a>
-  <a href="index.html#contact">Contact</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-
-    <div class="hero-text">
-      <h2>CITY PATHOLOGICAL<br>LABORATORY</h2>
-      <p>Accurate • Reliable • Confidential Diagnostic Services</p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="report.html">View Report →</a>
-        <a class="btn btn-outline" href="home-collection.html">Home Collection</a>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="logo">🧪</div>
+        <div class="brand-text">
+          <div class="brand-name">CITY PATHOLOGICAL LABORATORY</div>
+          <div class="brand-sub">A Unit of Global Janch Ghar</div>
+        </div>
       </div>
     </div>
+  </header>
 
-    <div class="hero-image">
-      <!-- MUST match file name exactly -->
-      <img src="./microscope.png" alt="Microscope">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="report.html">View Report</a>
+      <a class="nav-link" href="home-collection.html">Home Collection</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
     </div>
+  </nav>
 
-  </div>
-</section>
+  <!-- HERO (FULL DESIGN STYLE) -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature">
-    <span class="check">✓</span>
-    <div>
-      <h4>Quality-Assured Testing</h4>
-      <p>Standardized lab processes</p>
-    </div>
-  </div>
+        <div class="hero-left">
+          <h1 class="hero-title">CITY PATHOLOGICAL<br/>LABORATORY</h1>
+          <p class="hero-subtitle">Accurate • Reliable • Confidential Diagnostic Services</p>
 
-  <div class="feature">
-    <span class="check">✓</span>
-    <div>
-      <h4>Trained Technicians</h4>
-      <p>Certified & experienced staff</p>
-    </div>
-  </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="report.html">View Report →</a>
+            <a class="btn btn-outline" href="home-collection.html">Home Collection</a>
+          </div>
+        </div>
 
-  <div class="feature">
-    <span class="check">✓</span>
-    <div>
-      <h4>Same-Day / Next-Day Reports</h4>
-      <p>Fast and reliable reporting</p>
-    </div>
-  </div>
-</section>
+        <div class="hero-right" aria-hidden="true"></div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="card">
-    <h2>Contact Us</h2>
-    <p><strong>Main Branch:</strong><br>
-      RS Complex, Shiv Mohalla, Giridih
-    </p>
-    <p><strong>Phone:</strong> +91-8603446841</p>
-  </div>
-</section>
+      </div>
+    </section>
 
-<footer>
-  © City Pathological Laboratory, Giridih
-</footer>
+    <!-- FEATURES ROW -->
+    <section class="features">
+      <div class="feature">
+        <div class="tick">✓</div>
+        <div>
+          <h3>Quality-Assured Testing</h3>
+          <p>Standardized lab processes</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="tick">✓</div>
+        <div>
+          <h3>Trained Technicians</h3>
+          <p>Certified & experienced staff</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="tick">✓</div>
+        <div>
+          <h3>Same-Day / Next-Day Reports</h3>
+          <p>Fast and reliable reporting</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="card">
+        <h2>Contact Us</h2>
+        <p><strong>Main Branch:</strong><br>RS Complex, Shiv Mohalla, Giridih</p>
+        <p><strong>Phone:</strong> +91-8603446841</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © City Pathological Laboratory, Giridih
+  </footer>
 
 </body>
 </html>
