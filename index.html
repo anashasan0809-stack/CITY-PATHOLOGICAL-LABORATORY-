@@ -135,6 +135,28 @@ function viewReport() {
       alert("Report not found");
     });
 }
+  function downloadReport() {
+  const id = document.getElementById("reportID").value.trim();
+
+  if (!id) {
+    alert("Please enter Report ID");
+    return;
+  }
+
+  const pdfPath = "reports/" + id + ".pdf";
+  const imgPath = "reports/" + id + ".jpg";
+
+  fetch(pdfPath, { method: "HEAD" })
+    .then(res => {
+      const link = document.createElement("a");
+      link.href = res.ok ? pdfPath : imgPath;
+      link.download = id;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    })
+    .catch(() => alert("Report not found"));
+  }
       </script>
 
 <section id="homecollection">
@@ -165,6 +187,7 @@ function viewReport() {
 </footer></body>
 
 </html>
+
 
 
 
