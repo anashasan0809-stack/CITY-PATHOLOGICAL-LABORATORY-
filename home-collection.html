@@ -3,52 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Collection - City Pathological Laboratory</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Home Collection | City Pathological Laboratory</title>
+
+  <base href="/CITY-PATHOLOGICAL-LABORATORY-/" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+  <div class="page">
 
-<header>
-  <h1>CITY PATHOLOGICAL LABORATORY</h1>
-  <p>A Unit of Global Janch Ghar</p>
-</header>
+    <!-- HEADER -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <div class="logo">🧪</div>
+          <div class="brand-text">
+            <div class="brand-name">CITY PATHOLOGICAL LABORATORY</div>
+            <div class="brand-sub">A Unit of Global Janch Ghar</div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="report.html">View Report</a>
-  <a href="home-collection.html">Home Collection</a>
-  <a href="index.html#contact">Contact</a>
-</nav>
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="report.html">View Report</a>
+        <a class="nav-link" href="tests.html">Tests We Offer</a>
+        <a class="nav-link active" href="home-collection.html">Home Collection</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+      </div>
+    </nav>
 
-<section>
-  <div class="card">
-    <h2>Book Home Blood Collection</h2>
+    <!-- PAGE CONTENT -->
+    <main class="container">
+      <section class="page-section">
+        <div class="card form-card">
+          <h2>Book Home Blood Collection</h2>
 
-    <label>Patient Name</label>
-    <input type="text" placeholder="Enter Full Name" />
+          <form class="form" action="#" method="post">
+            <label class="field">
+              <span>Patient Name</span>
+              <input type="text" name="name" placeholder="Enter Full Name" required />
+            </label>
 
-    <label>Mobile Number</label>
-    <input type="tel" placeholder="Enter Mobile Number" />
+            <label class="field">
+              <span>Mobile Number</span>
+              <input type="tel" name="mobile" placeholder="Enter Mobile Number" required />
+            </label>
 
-    <label>Address</label>
-    <input type="text" placeholder="Enter Complete Address" />
+            <label class="field">
+              <span>Address</span>
+              <input type="text" name="address" placeholder="Enter Complete Address" required />
+            </label>
 
-    <label>Test Required</label>
-    <input type="text" placeholder="e.g. CBC, LFT, Thyroid" />
+            <label class="field">
+              <span>Tests Required</span>
+              <input type="text" name="tests" placeholder="e.g. CBC, LFT, Thyroid" required />
+            </label>
 
-    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfrJg3ePFV8pqBk4DvJH8d2mIs04N9HQkGM1aiOD2JGc-ebGA/viewform')">
-      Submit Request
-    </button>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Submit Request</button>
+            </div>
 
-    <p style="font-size:12px; margin-top:10px;">
-      Our team will contact you shortly to confirm your appointment.
-    </p>
+            <p class="note">Our team will contact you shortly to confirm your appointment.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © City Pathological Laboratory, Giridih
+    </footer>
+
   </div>
-</section>
-
-<footer>
-  © City Pathological Laboratory, Giridih
-</footer>
-
 </body>
 </html>
