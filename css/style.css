@@ -115,10 +115,10 @@ body{
 .hero-left{
   padding:70px 60px;
   background: linear-gradient(
-    to right,
-    rgba(219, 234, 254, 0.45) 0%,
-    rgba(219, 234, 254, 0.25) 35%,
-    rgba(255,255,255,0.95) 70%
+    90deg,
+    rgba(210, 232, 255, 0.95) 0%,
+    rgba(225, 240, 255, 0.65) 35%,
+    rgba(255, 255, 255, 1) 75%
   );
 }
 
@@ -176,6 +176,8 @@ body{
 
 /* right side hero image (your design image) */
 .hero-right{
+  margin-left: -1px; /* removes the thin middle line */
+}
   background:
     linear-gradient(to right,
       rgba(255,255,255,0.96) 0%,
