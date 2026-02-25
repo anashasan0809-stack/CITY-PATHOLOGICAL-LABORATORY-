@@ -147,6 +147,7 @@ body{
 .hero-right{
   background: url("../images/microscope.png") center/cover no-repeat;
   min-height: 360px;
+  height: 100%;
 }
 
 /* FEATURES */
