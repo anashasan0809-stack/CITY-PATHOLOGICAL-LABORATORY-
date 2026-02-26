@@ -34,163 +34,172 @@
       </div>
     </nav>
 
-    <!-- CONTENT -->
+    <!-- MAIN -->
     <main class="container">
-      <section class="page-section">
-        <div class="tests-head">
-          <div>
-            <h2 class="tests-title">Tests We Offer</h2>
-            <p class="tests-subtitle">Search a test name (e.g., CBC, LFT, Thyroid) or browse by category.</p>
+
+      <!-- HERO -->
+      <section class="tests-hero">
+        <div class="tests-hero-inner">
+          <h1>Tests We Offer</h1>
+          <p>Search by test name or browse by category.</p>
+
+          <div class="tests-toolbar">
+            <div class="tests-searchbox">
+              <input id="testSearch" type="text"
+                     placeholder="Search tests… (CBC, LFT, TSH, Sugar)"
+                     autocomplete="off" />
+              <button class="btn btn-primary" type="button" id="clearSearch">Clear</button>
+            </div>
+
+            <div class="tests-meta">
+              <span id="resultCount">0 tests</span>
+            </div>
           </div>
 
-          <div class="tests-search">
-            <input id="testSearch" type="text" placeholder="Search tests..." autocomplete="off" />
-            <button class="btn btn-primary" type="button" id="clearSearch">Clear</button>
+          <!-- FILTER CHIPS -->
+          <div class="chips">
+            <button class="chip active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="hematology" type="button">Hematology</button>
+            <button class="chip" data-filter="biochemistry" type="button">Biochemistry</button>
+            <button class="chip" data-filter="thyroid" type="button">Thyroid</button>
+            <button class="chip" data-filter="clinical" type="button">Clinical Pathology</button>
+            <button class="chip" data-filter="serology" type="button">Serology</button>
           </div>
         </div>
+      </section>
 
-        <!-- CATEGORY: BLOOD / HEMATOLOGY -->
-        <section class="test-category" data-category="Hematology">
-          <div class="category-head">
-            <h3>Hematology (Blood)</h3>
-            <span class="category-badge">Common</span>
+      <!-- TEST LIST -->
+      <section class="tests-wrap">
+
+        <!-- Hematology -->
+        <section class="test-group" data-group="hematology">
+          <div class="group-head">
+            <h2>Hematology</h2>
           </div>
-
-          <div class="tests-grid">
-            <div class="test-card" data-test="cbc complete blood count hemogram">
-              <h4>CBC / Hemogram</h4>
+          <div class="test-grid">
+            <div class="test-tile" data-test="cbc hemogram complete blood count">
+              <h3>CBC / Hemogram</h3>
               <p>Complete blood count parameters.</p>
             </div>
-
-            <div class="test-card" data-test="esr">
-              <h4>ESR</h4>
+            <div class="test-tile" data-test="esr">
+              <h3>ESR</h3>
               <p>Erythrocyte sedimentation rate.</p>
             </div>
-
-            <div class="test-card" data-test="hb hemoglobin">
-              <h4>Hb (Hemoglobin)</h4>
+            <div class="test-tile" data-test="hb hemoglobin">
+              <h3>Hemoglobin (Hb)</h3>
               <p>Hemoglobin estimation.</p>
             </div>
-
-            <div class="test-card" data-test="platelet count">
-              <h4>Platelet Count</h4>
+            <div class="test-tile" data-test="platelet count">
+              <h3>Platelet Count</h3>
               <p>Platelet count assessment.</p>
             </div>
           </div>
         </section>
 
-        <!-- CATEGORY: BIOCHEMISTRY -->
-        <section class="test-category" data-category="Biochemistry">
-          <div class="category-head">
-            <h3>Biochemistry</h3>
-            <span class="category-badge">Routine</span>
+        <!-- Biochemistry -->
+        <section class="test-group" data-group="biochemistry">
+          <div class="group-head">
+            <h2>Biochemistry</h2>
           </div>
-
-          <div class="tests-grid">
-            <div class="test-card" data-test="lft liver function test sgpt sgot bilirubin">
-              <h4>LFT (Liver Function Test)</h4>
-              <p>SGOT/SGPT, bilirubin, proteins etc.</p>
+          <div class="test-grid">
+            <div class="test-tile" data-test="lft liver function test">
+              <h3>LFT</h3>
+              <p>Liver function evaluation.</p>
             </div>
-
-            <div class="test-card" data-test="kft kidney function test urea creatinine">
-              <h4>KFT (Kidney Function Test)</h4>
-              <p>Urea, creatinine and related markers.</p>
+            <div class="test-tile" data-test="kft kidney function test">
+              <h3>KFT</h3>
+              <p>Kidney function evaluation.</p>
             </div>
-
-            <div class="test-card" data-test="glucose sugar fbs ppbs rbs hba1c">
-              <h4>Blood Sugar (FBS / PPBS / RBS)</h4>
-              <p>Glucose testing.</p>
+            <div class="test-tile" data-test="blood sugar glucose">
+              <h3>Blood Sugar</h3>
+              <p>FBS / PPBS / RBS.</p>
             </div>
-
-            <div class="test-card" data-test="hba1c">
-              <h4>HbA1c</h4>
+            <div class="test-tile" data-test="hba1c">
+              <h3>HbA1c</h3>
               <p>Average sugar control marker.</p>
             </div>
-
-            <div class="test-card" data-test="lipid profile cholesterol triglyceride hdl ldl">
-              <h4>Lipid Profile</h4>
-              <p>Cholesterol, HDL, LDL, triglycerides.</p>
-            </div>
-
-            <div class="test-card" data-test="uric acid">
-              <h4>Uric Acid</h4>
-              <p>Uric acid level evaluation.</p>
+            <div class="test-tile" data-test="lipid profile cholesterol">
+              <h3>Lipid Profile</h3>
+              <p>Cholesterol & triglycerides.</p>
             </div>
           </div>
         </section>
 
-        <!-- CATEGORY: THYROID / HORMONES -->
-        <section class="test-category" data-category="Thyroid & Hormones">
-          <div class="category-head">
-            <h3>Thyroid & Hormones</h3>
-            <span class="category-badge">Popular</span>
+        <!-- Thyroid -->
+        <section class="test-group" data-group="thyroid">
+          <div class="group-head">
+            <h2>Thyroid</h2>
           </div>
-
-          <div class="tests-grid">
-            <div class="test-card" data-test="tsh">
-              <h4>TSH</h4>
+          <div class="test-grid">
+            <div class="test-tile" data-test="tsh">
+              <h3>TSH</h3>
               <p>Thyroid stimulating hormone.</p>
             </div>
-
-            <div class="test-card" data-test="t3 t4">
-              <h4>T3 / T4</h4>
+            <div class="test-tile" data-test="t3 t4">
+              <h3>T3 / T4</h3>
               <p>Thyroid hormone levels.</p>
             </div>
-
-            <div class="test-card" data-test="thyroid profile t3 t4 tsh">
-              <h4>Thyroid Profile</h4>
-              <p>Combined thyroid panel.</p>
+            <div class="test-tile" data-test="thyroid profile">
+              <h3>Thyroid Profile</h3>
+              <p>Complete thyroid panel.</p>
             </div>
           </div>
         </section>
 
-        <!-- CATEGORY: URINE / STOOL -->
-        <section class="test-category" data-category="Clinical Pathology">
-          <div class="category-head">
-            <h3>Clinical Pathology</h3>
-            <span class="category-badge">Routine</span>
+        <!-- Clinical -->
+        <section class="test-group" data-group="clinical">
+          <div class="group-head">
+            <h2>Clinical Pathology</h2>
           </div>
-
-          <div class="tests-grid">
-            <div class="test-card" data-test="urine routine urine r/e urine re">
-              <h4>Urine Routine (R/E)</h4>
+          <div class="test-grid">
+            <div class="test-tile" data-test="urine routine">
+              <h3>Urine Routine (R/E)</h3>
               <p>Routine urine examination.</p>
             </div>
-
-            <div class="test-card" data-test="stool routine stool re">
-              <h4>Stool Routine</h4>
+            <div class="test-tile" data-test="stool routine">
+              <h3>Stool Routine</h3>
               <p>Routine stool examination.</p>
             </div>
           </div>
         </section>
 
-        <!-- CATEGORY: SEROLOGY -->
-        <section class="test-category" data-category="Serology">
-          <div class="category-head">
-            <h3>Serology</h3>
-            <span class="category-badge">Screening</span>
+        <!-- Serology -->
+        <section class="test-group" data-group="serology">
+          <div class="group-head">
+            <h2>Serology</h2>
           </div>
-
-          <div class="tests-grid">
-            <div class="test-card" data-test="crp">
-              <h4>CRP</h4>
+          <div class="test-grid">
+            <div class="test-tile" data-test="crp">
+              <h3>CRP</h3>
               <p>C-reactive protein.</p>
             </div>
-
-            <div class="test-card" data-test="widal">
-              <h4>Widal</h4>
+            <div class="test-tile" data-test="widal">
+              <h3>Widal</h3>
               <p>Typhoid screening test.</p>
             </div>
-
-            <div class="test-card" data-test="dengue ns1 igg igm">
-              <h4>Dengue (NS1 / IgG / IgM)</h4>
+            <div class="test-tile" data-test="dengue ns1 igg igm">
+              <h3>Dengue (NS1 / IgG / IgM)</h3>
               <p>Dengue screening.</p>
             </div>
           </div>
         </section>
 
+        <!-- NO RESULTS MESSAGE -->
         <div id="noResults" class="no-results" style="display:none;">
-          No matching tests found. Try another keyword.
+          <strong>Can’t find your test?</strong><br>
+          Please call 
+          <a class="phone-link" href="tel:+918603446841">+91 8603446841</a>
+          and ask about the test.
+        </div>
+
+        <!-- BOTTOM HELP BOX -->
+        <div class="help-box">
+          <h3>Can’t find your test in the list?</h3>
+          <p>
+            We may still provide it. Call 
+            <a class="phone-link" href="tel:+918603446841">+91 8603446841</a>
+            and ask about the test.
+          </p>
         </div>
 
       </section>
@@ -205,40 +214,56 @@
 <script>
   const searchInput = document.getElementById("testSearch");
   const clearBtn = document.getElementById("clearSearch");
-  const cards = Array.from(document.querySelectorAll(".test-card"));
-  const categories = Array.from(document.querySelectorAll(".test-category"));
+  const chips = document.querySelectorAll(".chip");
+  const tiles = document.querySelectorAll(".test-tile");
+  const groups = document.querySelectorAll(".test-group");
   const noResults = document.getElementById("noResults");
+  const resultCount = document.getElementById("resultCount");
 
-  function applyFilter() {
-    const q = (searchInput.value || "").trim().toLowerCase();
-    let visibleCount = 0;
+  let activeGroup = "all";
 
-    cards.forEach(card => {
-      const hay = (card.getAttribute("data-test") || card.innerText).toLowerCase();
-      const match = !q || hay.includes(q);
-      card.style.display = match ? "" : "none";
-      if (match) visibleCount++;
+  function applyFilter(){
+    const q = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+
+    tiles.forEach(tile=>{
+      const text = tile.dataset.test.toLowerCase();
+      const group = tile.closest(".test-group").dataset.group;
+      const matchText = !q || text.includes(q);
+      const matchGroup = activeGroup==="all" || group===activeGroup;
+      const show = matchText && matchGroup;
+      tile.style.display = show ? "" : "none";
+      if(show) visible++;
     });
 
-    // Hide empty categories
-    categories.forEach(cat => {
-      const anyVisible = Array.from(cat.querySelectorAll(".test-card"))
-        .some(c => c.style.display !== "none");
-      cat.style.display = anyVisible ? "" : "none";
+    groups.forEach(group=>{
+      const any = [...group.querySelectorAll(".test-tile")]
+        .some(t=>t.style.display!=="none");
+      group.style.display = any ? "" : "none";
     });
 
-    noResults.style.display = visibleCount === 0 ? "" : "none";
+    resultCount.textContent = visible + (visible===1 ? " test" : " tests");
+    noResults.style.display = visible===0 ? "" : "none";
   }
 
   searchInput.addEventListener("input", applyFilter);
 
-  clearBtn.addEventListener("click", () => {
-    searchInput.value = "";
+  clearBtn.addEventListener("click", ()=>{
+    searchInput.value="";
     applyFilter();
-    searchInput.focus();
+  });
+
+  chips.forEach(chip=>{
+    chip.addEventListener("click", ()=>{
+      chips.forEach(c=>c.classList.remove("active"));
+      chip.classList.add("active");
+      activeGroup = chip.dataset.filter;
+      applyFilter();
+    });
   });
 
   applyFilter();
 </script>
+
 </body>
-              </html>
+  </html>
