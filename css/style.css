@@ -100,20 +100,21 @@ body{
 }
 
 .hero-card{
-  background: #ffffff;   /* ensure solid white */
+  background: #ffffff;
   border-radius: 26px;
   box-shadow: var(--shadow);
   overflow: hidden;
 
-  display:grid;
+  display: grid;
   grid-template-columns: 1.1fr 1fr;
   min-height: 420px;
-   /* important – remove grid gap */
+
+  border: 0; /* no border = no seam */
 }
 
 /* left side */
 .hero-left{
-  padding:70px 60px;
+  padding: 70px 60px;
 
   /* blue fade ONLY behind left text */
   background: linear-gradient(
@@ -123,17 +124,9 @@ body{
     rgba(255, 255, 255, 1) 75%
   );
 }
-.hero-card{
-  border: 0;              /* remove border that can create seam */
-}
-
-.hero-right{
-  border-left: 0;
-  margin-left: -1px;      /* overlaps 1px to hide seam */
-}
 
 .hero-title{
-  margin:0;
+  margin: 0;
   font-size: 50px;
   line-height: 1.05;
   font-weight: 800;
@@ -148,59 +141,38 @@ body{
 
 /* buttons */
 .hero-actions{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 52px;
-  padding: 0 22px;
-  border-radius: 14px;
-  font-weight: 800;
-  text-decoration:none;
-  font-size: 16px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-}
-
-.btn:active{
-  transform: translateY(1px);
-  opacity: 0.95;
-}
-
-.btn-primary{
-  background: var(--green);
-  color:#fff;
-  border: 2px solid var(--green);
-  box-shadow: 0 10px 22px rgba(58,141,123,0.22);
-}
-
-.btn-outline{
-  background:#fff;
-  color: var(--greenDark);
-  border: 2px solid rgba(58,141,123,0.55);
-}
-
-/* right side hero image (your design image) */
+/* right side hero image */
 .hero-right{
+  margin-left: -1px; /* hides thin seam */
   background:
     linear-gradient(
       to right,
       rgba(255,255,255,0.92) 0%,
       rgba(255,255,255,0.75) 15%,
-      rgba(255,255,255,0.0) 40%
+      rgba(255,255,255,0.00) 40%
     ),
     url("../images/hero.png") center/cover no-repeat;
-  margin-left: -1px;
+}
+
+/* MOBILE */
+@media (max-width: 900px){
+  .hero-card{
+    grid-template-columns: 1fr;
   }
-}
-.hero-left{ position: relative; z-index: 1; }
-.hero-left{
-  border-right: none;
-}
+  .hero-left{
+    padding: 30px 22px;
+  }
+  .hero-title{
+    font-size: 34px;
+  }
+  .hero-right{
+    min-height: 240px;
+  }
 }
 
 /* FEATURES */
