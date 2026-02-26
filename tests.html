@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tests We Offer | City Pathological Laboratory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <div class="logo">🧪</div>
+          <div class="brand-text">
+            <div class="brand-name">CITY PATHOLOGICAL LABORATORY</div>
+            <div class="brand-sub">A Unit of Global Janch Ghar</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="report.html">View Report</a>
+        <a class="nav-link active" href="tests.html">Tests We Offer</a>
+        <a class="nav-link" href="home-collection.html">Home Collection</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="container">
+      <section class="page-section">
+        <div class="tests-head">
+          <div>
+            <h2 class="tests-title">Tests We Offer</h2>
+            <p class="tests-subtitle">Search a test name (e.g., CBC, LFT, Thyroid) or browse by category.</p>
+          </div>
+
+          <div class="tests-search">
+            <input id="testSearch" type="text" placeholder="Search tests..." autocomplete="off" />
+            <button class="btn btn-primary" type="button" id="clearSearch">Clear</button>
+          </div>
+        </div>
+
+        <!-- CATEGORY: BLOOD / HEMATOLOGY -->
+        <section class="test-category" data-category="Hematology">
+          <div class="category-head">
+            <h3>Hematology (Blood)</h3>
+            <span class="category-badge">Common</span>
+          </div>
+
+          <div class="tests-grid">
+            <div class="test-card" data-test="cbc complete blood count hemogram">
+              <h4>CBC / Hemogram</h4>
+              <p>Complete blood count parameters.</p>
+            </div>
+
+            <div class="test-card" data-test="esr">
+              <h4>ESR</h4>
+              <p>Erythrocyte sedimentation rate.</p>
+            </div>
+
+            <div class="test-card" data-test="hb hemoglobin">
+              <h4>Hb (Hemoglobin)</h4>
+              <p>Hemoglobin estimation.</p>
+            </div>
+
+            <div class="test-card" data-test="platelet count">
+              <h4>Platelet Count</h4>
+              <p>Platelet count assessment.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY: BIOCHEMISTRY -->
+        <section class="test-category" data-category="Biochemistry">
+          <div class="category-head">
+            <h3>Biochemistry</h3>
+            <span class="category-badge">Routine</span>
+          </div>
+
+          <div class="tests-grid">
+            <div class="test-card" data-test="lft liver function test sgpt sgot bilirubin">
+              <h4>LFT (Liver Function Test)</h4>
+              <p>SGOT/SGPT, bilirubin, proteins etc.</p>
+            </div>
+
+            <div class="test-card" data-test="kft kidney function test urea creatinine">
+              <h4>KFT (Kidney Function Test)</h4>
+              <p>Urea, creatinine and related markers.</p>
+            </div>
+
+            <div class="test-card" data-test="glucose sugar fbs ppbs rbs hba1c">
+              <h4>Blood Sugar (FBS / PPBS / RBS)</h4>
+              <p>Glucose testing.</p>
+            </div>
+
+            <div class="test-card" data-test="hba1c">
+              <h4>HbA1c</h4>
+              <p>Average sugar control marker.</p>
+            </div>
+
+            <div class="test-card" data-test="lipid profile cholesterol triglyceride hdl ldl">
+              <h4>Lipid Profile</h4>
+              <p>Cholesterol, HDL, LDL, triglycerides.</p>
+            </div>
+
+            <div class="test-card" data-test="uric acid">
+              <h4>Uric Acid</h4>
+              <p>Uric acid level evaluation.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY: THYROID / HORMONES -->
+        <section class="test-category" data-category="Thyroid & Hormones">
+          <div class="category-head">
+            <h3>Thyroid & Hormones</h3>
+            <span class="category-badge">Popular</span>
+          </div>
+
+          <div class="tests-grid">
+            <div class="test-card" data-test="tsh">
+              <h4>TSH</h4>
+              <p>Thyroid stimulating hormone.</p>
+            </div>
+
+            <div class="test-card" data-test="t3 t4">
+              <h4>T3 / T4</h4>
+              <p>Thyroid hormone levels.</p>
+            </div>
+
+            <div class="test-card" data-test="thyroid profile t3 t4 tsh">
+              <h4>Thyroid Profile</h4>
+              <p>Combined thyroid panel.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY: URINE / STOOL -->
+        <section class="test-category" data-category="Clinical Pathology">
+          <div class="category-head">
+            <h3>Clinical Pathology</h3>
+            <span class="category-badge">Routine</span>
+          </div>
+
+          <div class="tests-grid">
+            <div class="test-card" data-test="urine routine urine r/e urine re">
+              <h4>Urine Routine (R/E)</h4>
+              <p>Routine urine examination.</p>
+            </div>
+
+            <div class="test-card" data-test="stool routine stool re">
+              <h4>Stool Routine</h4>
+              <p>Routine stool examination.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY: SEROLOGY -->
+        <section class="test-category" data-category="Serology">
+          <div class="category-head">
+            <h3>Serology</h3>
+            <span class="category-badge">Screening</span>
+          </div>
+
+          <div class="tests-grid">
+            <div class="test-card" data-test="crp">
+              <h4>CRP</h4>
+              <p>C-reactive protein.</p>
+            </div>
+
+            <div class="test-card" data-test="widal">
+              <h4>Widal</h4>
+              <p>Typhoid screening test.</p>
+            </div>
+
+            <div class="test-card" data-test="dengue ns1 igg igm">
+              <h4>Dengue (NS1 / IgG / IgM)</h4>
+              <p>Dengue screening.</p>
+            </div>
+          </div>
+        </section>
+
+        <div id="noResults" class="no-results" style="display:none;">
+          No matching tests found. Try another keyword.
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      © City Pathological Laboratory, Giridih
+    </footer>
+
+  </div>
+
+<script>
+  const searchInput = document.getElementById("testSearch");
+  const clearBtn = document.getElementById("clearSearch");
+  const cards = Array.from(document.querySelectorAll(".test-card"));
+  const categories = Array.from(document.querySelectorAll(".test-category"));
+  const noResults = document.getElementById("noResults");
+
+  function applyFilter() {
+    const q = (searchInput.value || "").trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const hay = (card.getAttribute("data-test") || card.innerText).toLowerCase();
+      const match = !q || hay.includes(q);
+      card.style.display = match ? "" : "none";
+      if (match) visibleCount++;
+    });
+
+    // Hide empty categories
+    categories.forEach(cat => {
+      const anyVisible = Array.from(cat.querySelectorAll(".test-card"))
+        .some(c => c.style.display !== "none");
+      cat.style.display = anyVisible ? "" : "none";
+    });
+
+    noResults.style.display = visibleCount === 0 ? "" : "none";
+  }
+
+  searchInput.addEventListener("input", applyFilter);
+
+  clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    applyFilter();
+    searchInput.focus();
+  });
+
+  applyFilter();
+</script>
+</body>
+              </html>
