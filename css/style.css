@@ -114,13 +114,22 @@ body{
 /* left side */
 .hero-left{
   padding:70px 60px;
+
+  /* blue fade ONLY behind left text */
   background: linear-gradient(
     90deg,
     rgba(210, 232, 255, 0.95) 0%,
     rgba(225, 240, 255, 0.65) 35%,
     rgba(255, 255, 255, 1) 75%
-}
   );
+}
+.hero-card{
+  border: 0;              /* remove border that can create seam */
+}
+
+.hero-right{
+  border-left: 0;
+  margin-left: -1px;      /* overlaps 1px to hide seam */
 }
 
 .hero-title{
@@ -185,7 +194,7 @@ body{
       rgba(255,255,255,0.0) 40%
     ),
     url("../images/hero.png") center/cover no-repeat;
-  margin-left: -2px;
+  margin-left: -1px;
   }
 }
 .hero-left{ position: relative; z-index: 1; }
