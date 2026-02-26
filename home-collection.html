@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Collection | City Pathological Laboratory</title>
+
+  <base href="/CITY-PATHOLOGICAL-LABORATORY-/" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <div class="page">
 
-    <!-- HEADER -->
     <header class="topbar">
       <div class="container topbar-inner">
         <div class="brand">
@@ -23,7 +24,6 @@
       </div>
     </header>
 
-    <!-- NAV -->
     <nav class="nav">
       <div class="container nav-inner">
         <a class="nav-link" href="index.html">Home</a>
@@ -34,66 +34,49 @@
       </div>
     </nav>
 
-    <!-- PAGE CONTENT -->
     <main class="container">
       <section class="page-section">
         <div class="card form-card">
           <h2>Book Home Blood Collection</h2>
 
-          <!-- This form DOES NOT submit to GitHub -->
-          <form class="form" onsubmit="openGoogleForm(); return false;">
-
+          <div class="form">
             <label class="field">
               <span>Patient Name</span>
-              <input type="text" placeholder="Enter Full Name" required />
+              <input type="text" placeholder="Enter Full Name" />
             </label>
 
             <label class="field">
               <span>Mobile Number</span>
-              <input type="tel" placeholder="Enter Mobile Number" required />
+              <input type="tel" placeholder="Enter Mobile Number" />
             </label>
 
             <label class="field">
               <span>Address</span>
-              <input type="text" placeholder="Enter Complete Address" required />
+              <input type="text" placeholder="Enter Complete Address" />
             </label>
 
             <label class="field">
               <span>Tests Required</span>
-              <input type="text" placeholder="e.g. CBC, LFT, Thyroid" required />
+              <input type="text" placeholder="e.g. CBC, LFT, Thyroid" />
             </label>
 
             <div class="form-actions">
-              <button class="btn btn-primary" type="submit">
+              <button class="btn btn-primary" type="button"
+                onclick="window.open('https://forms.gle/YAdEVtFaakUvLd9H8','_blank')">
                 Submit Request
               </button>
             </div>
 
-            <p class="note">
-              After clicking submit, our official booking form will open.
-            </p>
-
-          </form>
+            <p class="note">We will contact you shortly to confirm your appointment.</p>
+          </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
       © City Pathological Laboratory, Giridih
     </footer>
 
   </div>
-
-  <!-- GOOGLE FORM SCRIPT -->
-  <script>
-    function openGoogleForm(){
-      window.open(
-        "https://forms.gle/YAdEVtFaakUvLd9H8",
-        "_blank"
-      );
-    }
-  </script>
-
 </body>
 </html>
