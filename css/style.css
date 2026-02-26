@@ -103,14 +103,12 @@ body{
   background: #ffffff;   /* ensure solid white */
   border-radius: 26px;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(0,0,0,0.04);
   overflow: hidden;
 
   display:grid;
   grid-template-columns: 1.1fr 1fr;
   min-height: 420px;
-
-  gap: 0;   /* important – remove grid gap */
+   /* important – remove grid gap */
 }
 
 /* left side */
@@ -178,13 +176,12 @@ body{
 
 /* right side hero image (your design image) */
 .hero-right{
-  position: relative;
-  margin-left: -2px;     /* overlap to hide seam */
   background:
-    linear-gradient(to right,
-      rgba(255,255,255,0.96) 0%,
-      rgba(255,255,255,0.70) 22%,
-      rgba(255,255,255,0.00) 46%
+    linear-gradient(
+      to right,
+      rgba(255,255,255,0.92) 0%,
+      rgba(255,255,255,0.75) 15%,
+      rgba(255,255,255,0.0) 40%
     ),
     url("../images/hero.png") center/cover no-repeat;
 }
