@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>View Report | City Pathological Laboratory</title>
+
+  <base href="/CITY-PATHOLOGICAL-LABORATORY-/" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <div class="page">
 
-    <!-- HEADER -->
     <header class="topbar">
       <div class="container topbar-inner">
         <div class="brand">
@@ -23,7 +24,6 @@
       </div>
     </header>
 
-    <!-- NAV -->
     <nav class="nav">
       <div class="container nav-inner">
         <a class="nav-link" href="index.html">Home</a>
@@ -34,17 +34,15 @@
       </div>
     </nav>
 
-    <!-- PAGE CONTENT -->
     <main class="container">
       <section class="page-section">
         <div class="card form-card">
           <h2>View Patient Report</h2>
 
-          <!-- IMPORTANT: No action/method POST (avoids 405) -->
-          <form class="form" onsubmit="return false;">
+          <div class="form">
             <label class="field">
               <span>Report ID</span>
-              <input type="text" id="reportID" placeholder="Enter Report ID (e.g. 3103)" required />
+              <input type="text" id="reportID" placeholder="Enter Report ID" required />
             </label>
 
             <label class="field">
@@ -57,8 +55,8 @@
               <button class="btn btn-outline" type="button" onclick="downloadReport()">Download Report</button>
             </div>
 
-            <p class="note">Note: Website uses only Report ID. Patient Name is shown for professional look.</p>
-          </form>
+            <p class="note">Note: Reports may open as PDF or image.</p>
+          </div>
         </div>
       </section>
     </main>
@@ -69,54 +67,38 @@
 
   </div>
 
-  <script>
-    function getId() {
-      return document.getElementById("reportID").value.trim();
-    }
+<script>
+function viewReport(){
+  const id = document.getElementById("reportID").value.trim();
+  if(!id){ alert("Please enter Report ID"); return; }
 
-    function findReportPath(id) {
-      // Tries PDF first, then JPG, then PNG
-      const pdfPath = "reports/" + id + ".pdf";
-      const jpgPath = "reports/" + id + ".jpg";
-      const pngPath = "reports/" + id + ".png";
+  const pdfPath = "reports/" + id + ".pdf";
+  const imgPath = "reports/" + id + ".jpg";
 
-      return fetch(pdfPath, { method: "HEAD" })
-        .then(res => res.ok ? pdfPath : fetch(jpgPath, { method: "HEAD" })
-          .then(r2 => r2.ok ? jpgPath : fetch(pngPath, { method: "HEAD" })
-            .then(r3 => r3.ok ? pngPath : null)
-          )
-        )
-        .catch(() => null);
-    }
+  fetch(pdfPath, { method:"HEAD" })
+    .then(res => window.open(res.ok ? pdfPath : imgPath, "_blank"))
+    .catch(() => alert("Report not found"));
+}
 
-    async function viewReport() {
-      const id = getId();
-      if (!id) { alert("Please enter Report ID"); return; }
+function downloadReport(){
+  const id = document.getElementById("reportID").value.trim();
+  if(!id){ alert("Please enter Report ID"); return; }
 
-      const path = await findReportPath(id);
-      if (!path) { alert("Report not found. Please check ID."); return; }
+  const pdfPath = "reports/" + id + ".pdf";
+  const imgPath = "reports/" + id + ".jpg";
 
-      window.open(path, "_blank");
-    }
-
-    async function downloadReport() {
-      const id = getId();
-      if (!id) { alert("Please enter Report ID"); return; }
-
-      const path = await findReportPath(id);
-      if (!path) { alert("Report not found. Please check ID."); return; }
-
-      const link = document.createElement("a");
-      link.href = path;
-
-      // keep correct extension in downloaded file name
-      const ext = path.split(".").pop();
-      link.download = id + "." + ext;
-
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  </script>
+  fetch(pdfPath, { method:"HEAD" })
+    .then(res => {
+      const path = res.ok ? pdfPath : imgPath;
+      const a = document.createElement("a");
+      a.href = path;
+      a.download = id;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    })
+    .catch(() => alert("Report not found"));
+}
+</script>
 </body>
 </html>
