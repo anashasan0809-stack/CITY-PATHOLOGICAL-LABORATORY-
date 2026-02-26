@@ -370,6 +370,229 @@ body{
 @media (max-width: 900px){
   .tests-grid{ grid-template-columns: 1fr; }
 }
+/* ===== TESTS PAGE (matches calm site theme) ===== */
+
+.tests-hero{
+  margin-top: 18px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.04);
+  background:
+    radial-gradient(700px 360px at 20% 10%, rgba(58,141,123,0.12), transparent 55%),
+    radial-gradient(700px 360px at 80% 20%, rgba(59,130,246,0.10), transparent 55%),
+    linear-gradient(#ffffff, #f8fbff);
+  position: relative;
+}
+
+.tests-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("../images/hero.png") right center/520px no-repeat;
+  opacity: 0.08;
+  filter: grayscale(1) blur(1px);
+  pointer-events:none;
+}
+
+.tests-hero-inner{
+  position: relative;
+  z-index: 1;
+  padding: 22px 22px 18px;
+}
+
+.tests-hero h1{
+  margin:0;
+  font-size: 28px;
+  letter-spacing: -0.3px;
+}
+
+.tests-hero p{
+  margin: 8px 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tests-toolbar{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin-bottom: 14px;
+}
+
+.tests-searchbox{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.tests-searchbox input{
+  width: min(520px, 78vw);
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 0 14px;
+  font-size: 15px;
+  outline:none;
+  background:#fff;
+}
+
+.tests-searchbox input:focus{
+  border-color: rgba(58,141,123,0.55);
+  box-shadow: 0 0 0 4px rgba(58,141,123,0.12);
+}
+
+.tests-meta{
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.chips{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.chip{
+  border: 1px solid rgba(58,141,123,0.22);
+  background: rgba(58,141,123,0.08);
+  color: var(--greenDark);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor:pointer;
+}
+
+.chip.active{
+  background: rgba(58,141,123,0.18);
+  border-color: rgba(58,141,123,0.32);
+}
+
+.tests-wrap{
+  padding: 18px 0 34px;
+}
+
+.test-group{
+  margin-top: 18px;
+}
+
+.group-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom: 12px;
+}
+
+.group-head h2{
+  margin:0;
+  font-size: 16px;
+}
+
+.group-tag{
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--greenDark);
+  background: rgba(58,141,123,0.12);
+  border: 1px solid rgba(58,141,123,0.18);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.test-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.test-tile{
+  background:#fff;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+  padding: 16px;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.test-tile:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(15,23,42,0.10);
+}
+
+.tile-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(58,141,123,0.12);
+  display:grid;
+  place-items:center;
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+.tile-body h3{
+  margin:0;
+  font-size: 15px;
+}
+
+.tile-body p{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.no-results{
+  margin-top: 18px;
+  padding: 14px;
+  background:#fff;
+  border-radius: 14px;
+  border: 1px dashed rgba(0,0,0,0.12);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .test-grid{ grid-template-columns: 1fr; }
+}
+/* ===== Help box + phone link (Tests page) ===== */
+.help-box{
+  margin-top: 18px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+  padding: 16px 18px;
+}
+
+.help-box h3{
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.help-box p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.phone-link{
+  color: var(--greenDark);
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(58,141,123,0.25);
+}
+
+.phone-link:hover{
+  border-bottom-color: rgba(58,141,123,0.45);
+}
 
 
 
