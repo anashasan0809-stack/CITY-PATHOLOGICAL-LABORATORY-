@@ -119,6 +119,7 @@ body{
     rgba(210, 232, 255, 0.95) 0%,
     rgba(225, 240, 255, 0.65) 35%,
     rgba(255, 255, 255, 1) 75%
+}
   );
 }
 
@@ -184,8 +185,14 @@ body{
       rgba(255,255,255,0.0) 40%
     ),
     url("../images/hero.png") center/cover no-repeat;
+  margin-left: -2px;
+  }
 }
 .hero-left{ position: relative; z-index: 1; }
+.hero-left{
+  border-right: none;
+}
+}
 
 /* FEATURES */
 .features{
