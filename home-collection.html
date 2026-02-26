@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Collection | City Pathological Laboratory</title>
-
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -36,40 +35,65 @@
     </nav>
 
     <!-- PAGE CONTENT -->
-    <section class="inner-page">
-  <div class="container">
+    <main class="container">
+      <section class="page-section">
+        <div class="card form-card">
+          <h2>Book Home Blood Collection</h2>
 
-    <div class="card form-card">
-      <h2>Book Home Blood Collection</h2>
+          <!-- This form DOES NOT submit to GitHub -->
+          <form class="form" onsubmit="openGoogleForm(); return false;">
 
-      <form class="form" action="#" method="post">
-        <label class="field">
-          <span>Patient Name</span>
-          <input type="text" name="name" placeholder="Enter Full Name" required />
-        </label>
+            <label class="field">
+              <span>Patient Name</span>
+              <input type="text" placeholder="Enter Full Name" required />
+            </label>
 
-        <label class="field">
-          <span>Mobile Number</span>
-          <input type="tel" name="mobile" placeholder="Enter Mobile Number" required />
-        </label>
+            <label class="field">
+              <span>Mobile Number</span>
+              <input type="tel" placeholder="Enter Mobile Number" required />
+            </label>
 
-        <label class="field">
-          <span>Address</span>
-          <input type="text" name="address" placeholder="Enter Complete Address" required />
-        </label>
+            <label class="field">
+              <span>Address</span>
+              <input type="text" placeholder="Enter Complete Address" required />
+            </label>
 
-        <label class="field">
-          <span>Tests Required</span>
-          <input type="text" name="tests" placeholder="e.g. CBC, LFT, Thyroid" required />
-        </label>
+            <label class="field">
+              <span>Tests Required</span>
+              <input type="text" placeholder="e.g. CBC, LFT, Thyroid" required />
+            </label>
 
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Submit Request</button>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                Submit Request
+              </button>
+            </div>
+
+            <p class="note">
+              After clicking submit, our official booking form will open.
+            </p>
+
+          </form>
         </div>
+      </section>
+    </main>
 
-        <p class="note">Our team will contact you shortly to confirm your appointment.</p>
-      </form>
-    </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      © City Pathological Laboratory, Giridih
+    </footer>
 
   </div>
-    </section>
+
+  <!-- GOOGLE FORM SCRIPT -->
+  <script>
+    function openGoogleForm(){
+      window.open(
+        "https://forms.gle/YAdEVtFaakUvLd9H8",
+        "_blank"
+      );
+    }
+  </script>
+
+</body>
+</html>
