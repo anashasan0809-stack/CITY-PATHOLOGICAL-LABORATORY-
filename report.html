@@ -69,7 +69,7 @@
 
 <script>
 function viewReport(){
-  const id = document.getElementById("reportID").value.trim();
+  const id = document.getElementById("report_id").value.trim();
   if(!id){ alert("Please enter Report ID"); return; }
 
   const pdfPath = "reports/" + id + ".pdf";
@@ -81,7 +81,7 @@ function viewReport(){
 }
 
 function downloadReport(){
-  const id = document.getElementById("reportID").value.trim();
+  const id = document.getElementById("report_id").value.trim();
   if(!id){ alert("Please enter Report ID"); return; }
 
   const pdfPath = "reports/" + id + ".pdf";
